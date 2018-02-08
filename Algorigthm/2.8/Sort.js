@@ -4,15 +4,30 @@ var datas = [23,3,43,12,78,2,90,4,1,11,8,41,5,2];
 // 冒泡排序*****************************************************************************************************************************
 function bubbleSort(numbers) {
   var len = numbers.length;
-
-
+  for (var i = 0; i < len; i++) {
+    for (var j = 0;j < len - i - 1;j++) {
+      if (numbers[j] > numbers[j + 1]) {
+        var temple = numbers[j];
+        numbers[j] = numbers[j + 1];
+        numbers[j + 1] = temple;
+      }
+    }
+  }
   return numbers;
 }
 
 // 选择排序*****************************************************************************************************************************
 function selectSort(numbers) {
   var len = numbers.length;
-
+  for (var i = 0; i < len; i++) {
+    for (var j= i + 1;j < len ;j++) {
+      if (numbers[j] < numbers[i]) {
+        var temple = numbers[j];
+        numbers[j] = numbers[i];
+        numbers[i] = temple;
+      }
+    }
+  }
   return numbers;
 }
 
@@ -213,12 +228,12 @@ console.log("元数据   :" + datas+ "\n");
 var result;
 
 // var result = bubbleSort(datas);
-// var result = selectSort(datas);
+var result = selectSort(datas);
 // var result = insertSort(datas);
 // var result = shellSort(datas);
 // result = quickSort(datas,0,datas.length - 1);
 // result = mergeSort(datas);
-result = bucketSort(datas);
+// result = bucketSort(datas);
 // resutl = heapSort(datas);
 
 console.log("排列结果 :" + datas);
