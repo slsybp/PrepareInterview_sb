@@ -95573,8 +95573,10 @@ struct __main_block_impl_0 {
     Desc = desc;
   }
 };
-static void __main_block_func_0(struct __main_block_impl_0 *__cself) {
-printf("Block \n");}
+static int __main_block_func_0(struct __main_block_impl_0 *__cself) {
+printf("Block \n");
+        return 2;
+    }
 
 static struct __main_block_desc_0 {
   size_t reserved;
@@ -95587,8 +95589,8 @@ int main(int argc, const char * argv[]) {
 
 
 
-    void (*blk)(void) = ((void (*)())&__main_block_impl_0((void *)__main_block_func_0, &__main_block_desc_0_DATA));
-    ((void (*)(__block_impl *))((__block_impl *)blk)->FuncPtr)((__block_impl *)blk);
+    int (*blk)(void) = ((int (*)())&__main_block_impl_0((void *)__main_block_func_0, &__main_block_desc_0_DATA));
+    ((int (*)(__block_impl *))((__block_impl *)blk)->FuncPtr)((__block_impl *)blk);
     return 0;
 }
 static struct IMAGE_INFO { unsigned version; unsigned flag; } _OBJC_IMAGE_INFO = { 0, 2 };

@@ -14,6 +14,7 @@
   int (^blk)(int) = ^int (int count) {
         return count + 1;
     };
+  
     
 
     int (^blk2)(int) = blk;

@@ -15,7 +15,9 @@ int main(int argc, const char * argv[]) {
 //    }
 //    return 0;
     
-    void (^blk)(void) = ^{printf("Block \n");};
+    int (^blk)(void) = ^{printf("Block \n");
+        return 2;
+    };
     blk();
     return 0;
 }
